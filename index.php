@@ -7,21 +7,15 @@
  * @version 1.0.0
  */
 
-use \core\routes;
+use \core\thin;
 
 define('BASEPATH', realpath('./'));
-define('CORE', BASEPATH.'/core/');
 
-define('DEBUG', true);
-if(DEBUG){
-    ini_set('display_errors', 'On');
-}else{
-    ini_set('display_errors', 'Off');
-}
+ini_set('display_errors', 'On');
 
-require CORE.'init.php';
-require CORE.'tool.php';
+require BASEPATH.'/core/tool.php';
+require BASEPATH.'/core/thin.php';
 
+spl_autoload_register('\core\thin::autoload');
 
-spl_autoload_register('\core\init::autoload');
-new routes();
+thin::run();
