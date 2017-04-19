@@ -1,6 +1,6 @@
 <?php
 
-namespace core;
+namespace lib;
 
 class model extends \PDO
 {

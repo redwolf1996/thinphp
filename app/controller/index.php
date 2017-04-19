@@ -2,7 +2,7 @@
 
 namespace app\controller;
 
-use core\model;
+use lib\model;
 
 class index
 {
