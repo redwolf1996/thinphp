@@ -5,6 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<h1>世界你好</h1>
+    <h1>世界你好<?=$bbb;?></h1>
+    <?= $aaa;?>
 </body>
 </html>
