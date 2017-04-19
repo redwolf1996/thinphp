@@ -10,7 +10,6 @@
 use \core\thin;
 
 define('BASEPATH', realpath('./'));
-
 ini_set('display_errors', 'On');
 
 require BASEPATH.'/core/tool.php';

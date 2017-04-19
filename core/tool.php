@@ -6,6 +6,5 @@ function dump($value){
     }else{
         print_r($value);
     }
-
     echo '<br>';
 }
