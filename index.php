@@ -12,8 +12,8 @@ use \core\thin;
 define('BASEPATH', realpath('./'));
 ini_set('display_errors', 'On');
 
-require BASEPATH.'/core/tool.php';
-require BASEPATH.'/core/thin.php';
+require 'core/tool.php';
+require 'core/thin.php';
 
 spl_autoload_register('\core\thin::autoload');
 
