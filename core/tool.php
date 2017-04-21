@@ -10,3 +10,8 @@ function dump($value){
     echo "</pre>";
     echo "<br>";
 }
+
+function config($name){
+    $config = require BASEPATH .'/config.php';
+    return $config[$name];
+}

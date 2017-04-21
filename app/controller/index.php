@@ -14,11 +14,10 @@ class index
     public function index()
     {
         $model = new model();
-        $sql = "SELECT * FROM1 `user1`";
+        $sql = "SELECT * FROM `user`";
         $ret = $model->_query($sql);
         if($ret){
             dump($ret->fetchAll());
         }
     }
-
 }

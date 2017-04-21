@@ -1,6 +1,10 @@
 <?php
+
 return [
     'debug' => true,
-    'mysql' => [],
-    'redis' => [],
+    'mysql' => [
+        'dsn' => 'mysql:host=localhost;dbname=test',
+        'username' => 'root',
+        'passwd' => 'root'
+    ],
 ];

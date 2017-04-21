@@ -10,10 +10,11 @@
 use \core\thin;
 
 define('BASEPATH', realpath('./'));
-ini_set('display_errors', 'On');
 
 require 'core/tool.php';
 require 'core/thin.php';
+
+config('debug') === true ? error_reporting(E_ALL) : error_reporting(0);
 
 spl_autoload_register('\core\thin::autoload');
 

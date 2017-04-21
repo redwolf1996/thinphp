@@ -6,9 +6,9 @@ class model extends \PDO
 {
     public function __construct()
     {
-        $dsn = 'mysql:host=localhost;dbname=test';
-        $username = 'root';
-        $passwd = 'root';
+        $dsn = config('mysql')['dsn'];
+        $username = config('mysql')['username'];
+        $passwd = config('mysql')['passwd'];
 
         try{
             parent::__construct($dsn, $username, $passwd);
