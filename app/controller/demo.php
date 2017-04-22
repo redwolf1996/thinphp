@@ -2,13 +2,10 @@
 
 namespace app\controller;
 
+use lib\controller;
+
 class demo extends controller
 {
-    public function __construct()
-    {
-        parent::__construct();
-    }
-
     public function test1()
     {
         $this->view('index');

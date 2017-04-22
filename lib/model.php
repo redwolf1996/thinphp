@@ -1,8 +1,6 @@
 <?php
 
-namespace app\model;
-
-use lib\db;
+namespace lib;
 
 class model extends db
 {

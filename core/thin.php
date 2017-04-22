@@ -2,9 +2,11 @@
 
 namespace core;
 
+use lib\route;
+
 class thin
 {
-    public static function run()
+    public function run()
     {
         $route = new route();
         $controller = $route->controller;
