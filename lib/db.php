@@ -2,6 +2,9 @@
 
 namespace lib;
 
+use PDO;
+use PDOException;
+
 class db
 {
     private static $db = null;
@@ -10,8 +13,8 @@ class db
     {
         if(self::$db === null){
             try{
-                self::$db = new \PDO(config('db')['dsn'], config('db')['username'], config('db')['passwd']);
-            }catch (\PDOException $e){
+                self::$db = new PDO(config('db')['dsn'], config('db')['username'], config('db')['passwd']);
+            }catch (PDOException $e){
                 log::put($e->getMessage());
             }
         }
