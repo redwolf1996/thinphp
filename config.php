@@ -6,6 +6,5 @@ return [
         'dsn' => 'mysql:host=localhost;dbname=test',
         'username' => 'root',
         'passwd' => 'root',
-        'charset' => 'utf8'
     ],
 ];

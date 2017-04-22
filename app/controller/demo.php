@@ -2,7 +2,7 @@
 
 namespace app\controller;
 
-class demo extends base_controller
+class demo extends controller
 {
     public function __construct()
     {

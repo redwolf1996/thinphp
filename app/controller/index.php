@@ -13,9 +13,9 @@ class index
 
     public function index()
     {
-        $model = new db();
+        $db = new db();
         $sql = "SELECT * FROM `user`";
-        $ret = $model->_query($sql);
+        $ret = $db->query($sql);
         if($ret){
             dump($ret->fetchAll());
         }

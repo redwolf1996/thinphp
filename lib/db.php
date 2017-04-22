@@ -2,33 +2,27 @@
 
 namespace lib;
 
-class db extends \PDO
+class db
 {
+    private static $db = null;
+
     public function __construct()
     {
-        $dsn = config('db')['dsn'];
-        $username = config('db')['username'];
-        $passwd = config('db')['passwd'];
-
-        try{
-            parent::__construct($dsn, $username, $passwd);
-            $this->charset(config('db')['charset']);
-        }catch (\PDOException $e){
-            log::put($e->getMessage());
+        if(self::$db === null){
+            try{
+                self::$db = new \PDO(config('db')['dsn'], config('db')['username'], config('db')['passwd']);
+            }catch (\PDOException $e){
+                log::put($e->getMessage());
+            }
         }
     }
 
-    public function _query($sql)
+    public function query($sql)
     {
-        $rs = $this->query($sql);
+        $rs = self::$db->query($sql);
         if(!$rs){
-            log::put($this->errorinfo()[2]. PHP_EOL .$sql);
+            log::put(self::$db->errorinfo()[2]. PHP_EOL .$sql);
         }
         return $rs;
-    }
-
-    private function charset($char)
-    {
-        $this->exec('set names '. $char);
     }
 }

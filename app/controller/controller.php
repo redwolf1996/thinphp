@@ -2,7 +2,7 @@
 
 namespace app\controller;
 
-class base_controller
+class controller
 {
     public $data;
 
