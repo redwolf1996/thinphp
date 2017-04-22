@@ -1,6 +1,6 @@
 <?php
 
-function dump($value){
+function d($value){
     echo "<pre>";
     if(is_object($value) || is_bool($value)){
         var_dump($value);

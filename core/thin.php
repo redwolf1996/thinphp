@@ -6,7 +6,7 @@ use lib\route;
 
 class thin
 {
-    public function run()
+    public static function run()
     {
         $route = new route();
         $controller = $route->controller;

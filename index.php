@@ -18,5 +18,4 @@ config('debug') === true ? error_reporting(E_ALL) : error_reporting(0);
 
 spl_autoload_register('\core\thin::autoload');
 
-$app = new thin();
-$app->run();
+thin::run();
