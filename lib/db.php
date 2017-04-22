@@ -2,18 +2,18 @@
 
 namespace lib;
 
-class model extends \PDO
+class db extends \PDO
 {
     public function __construct()
     {
-        $dsn = config('mysql')['dsn'];
-        $username = config('mysql')['username'];
-        $passwd = config('mysql')['passwd'];
+        $dsn = config('db')['dsn'];
+        $username = config('db')['username'];
+        $passwd = config('db')['passwd'];
 
         try{
             parent::__construct($dsn, $username, $passwd);
+            $this->charset(config('db')['charset']);
         }catch (\PDOException $e){
-            dump($e->getMessage());
             log::put($e->getMessage());
         }
     }
@@ -25,5 +25,10 @@ class model extends \PDO
             log::put($this->errorinfo()[2]. PHP_EOL .$sql);
         }
         return $rs;
+    }
+
+    private function charset($char)
+    {
+        $this->exec('set names '. $char);
     }
 }

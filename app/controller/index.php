@@ -2,7 +2,7 @@
 
 namespace app\controller;
 
-use lib\model;
+use lib\db;
 
 class index
 {
@@ -13,7 +13,7 @@ class index
 
     public function index()
     {
-        $model = new model();
+        $model = new db();
         $sql = "SELECT * FROM `user`";
         $ret = $model->_query($sql);
         if($ret){
