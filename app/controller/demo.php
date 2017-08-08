@@ -7,9 +7,9 @@ use lib\db;
 
 class demo extends controller
 {
-  public function action_foo()
+  public function action_foo(db $db)
   {
-    $db = new db();
+//    $db = new db();
     $bar = $db->query("SELECT * FROM `user`")->fetchAll();
     $bar = $bar ? $bar : '';
 
