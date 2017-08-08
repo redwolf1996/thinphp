@@ -1,6 +1,6 @@
 <?php
 
-function d($value){
+function dd($value){
     echo "<pre>";
     if(is_object($value) || is_bool($value)){
         var_dump($value);
@@ -9,6 +9,7 @@ function d($value){
     }
     echo "</pre>";
     echo "<br>";
+    die();
 }
 
 function config($name){
