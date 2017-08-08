@@ -21,13 +21,13 @@ class controller
   public function view($path = '', array $data = [])
   {
     $this->data = $data;
-    extract($this->data); //解构
+    extract($this->data);
 
     $file = BASEPATH.'/app/view/'.$path.'.php';
     if(is_file($file)){
       include $file;
     }else{
-      throw new \Exception('视图路径错误 '.$file);
+      throw new \Exception('view path error '.$file);
     }
   }
 }
