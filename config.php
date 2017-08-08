@@ -1,10 +1,11 @@
 <?php
 
 return [
-    'debug' => true,
-    'db' => [
-        'dsn' => 'mysql:host=localhost;dbname=test',
-        'username' => 'root',
-        'passwd' => 'root',
-    ],
+  'debug' => true,
+  'db' => [
+    'host'      => 'localhost',
+    'dbname'    => 'test',
+    'username'  => 'root',
+    'passwd'    => 'root',
+  ],
 ];

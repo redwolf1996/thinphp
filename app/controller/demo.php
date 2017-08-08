@@ -3,19 +3,19 @@
 namespace app\controller;
 
 use lib\controller;
+use lib\db;
 
 class demo extends controller
 {
-    public function test1()
-    {
-        $this->view('index');
-    }
+  public function action_foo()
+  {
+    $db = new db();
+    $bar = $db->query("SELECT * FROM `user`")->fetchAll();
+    $bar = $bar ? $bar : '';
 
-    public function test2()
-    {
-        $this->view('index/test', [
-            'aaa'=>'111',
-            'bbb'=>'222'
-        ]);
-    }
+    $this->view('demo/default', [
+      'foo' => 'this is foo variable',
+      'bar' => $bar
+    ]);
+  }
 }

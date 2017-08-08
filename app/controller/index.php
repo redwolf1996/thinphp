@@ -2,22 +2,14 @@
 
 namespace app\controller;
 
-use lib\db;
+use lib\controller;
 
-class index
+class index extends controller
 {
-    public function __construct()
-    {
-
-    }
-
     public function index()
     {
-        $db = new db();
-        $sql = "SELECT * FROM `user`";
-        $ret = $db->query($sql);
-        if($ret){
-            dd($ret->fetchAll());
-        }
+      $this->view('welcome', [
+
+      ]);
     }
 }
