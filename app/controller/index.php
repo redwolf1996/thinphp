@@ -17,7 +17,7 @@ class index
         $sql = "SELECT * FROM `user`";
         $ret = $db->query($sql);
         if($ret){
-            d($ret->fetchAll());
+            dd($ret->fetchAll());
         }
     }
 }
